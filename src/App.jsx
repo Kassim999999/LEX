@@ -8,7 +8,7 @@ import Pricing from "./components/Pricing";
 import Gallery from "./components/Gallery";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 import WhatsappButton from "./components/WhatsappButton";
 
 function App() {
@@ -22,13 +22,7 @@ function App() {
       <Gallery />
       <Testimonials />
       <Contact />
-      {/*
-      
-      
-      
-      
-      
-      <Footer /> */}
+      <Footer />
       <WhatsappButton />
     </>
   );
