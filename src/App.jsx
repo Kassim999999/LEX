@@ -2,7 +2,7 @@ import "./css/App.css";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-// import Services from "./components/Services";
+import Services from "./components/Services";
 // import WhyChooseUs from "./components/WhyChooseUs";
 // import Pricing from "./components/Pricing";
 // import Gallery from "./components/Gallery";
@@ -15,7 +15,8 @@ function App() {
     <>
       <Navbar />
       <Hero />
-      {/* <Services />
+      <Services />
+      {/*
       <WhyChooseUs />
       <Pricing />
       <Gallery />
