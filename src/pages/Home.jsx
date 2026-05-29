@@ -358,6 +358,42 @@ function Home() {
         </div>
       </section>
 
+      {/* FINAL BOOKING CTA */}
+<section className="booking-section">
+
+  <div
+    className="booking-content"
+    data-aos="fade-up"
+  >
+    <span>PREMIUM CLEANING EXPERIENCE</span>
+
+    <h2>
+      Ready To Experience
+      Premium Cleaning?
+    </h2>
+
+    <p>
+      From luxury carwash and detailing
+      to carpet and sofa cleaning,
+      LEX delivers spotless results
+      every single time.
+    </p>
+
+    <div className="booking-buttons">
+
+      <button className="primary-btn">
+        Book Appointment
+      </button>
+
+      <button className="secondary-btn">
+        Call Us
+      </button>
+
+    </div>
+  </div>
+
+</section>
+
     </>
   );
 }
