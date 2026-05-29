@@ -8,6 +8,8 @@ import "aos/dist/aos.css";
 AOS.init({
   duration: 1000,
   once: true,
+  easing: "ease-in-out",
+  offset: 80,
 });
 
 ReactDOM.createRoot(

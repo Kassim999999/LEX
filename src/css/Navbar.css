@@ -74,35 +74,45 @@
 
 @media(max-width:900px) {
 
+    .navbar {
+        padding: 20px 24px;
+        width: 100%;
+    }
+
     .book-btn {
         display: none;
     }
 
     .menu-toggle {
         display: block;
+        z-index: 1001;
     }
 
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 280px;
-        height: 100vh;
 
-        background: #0B0B0B;
+        width: 280px;
+        max-width: 80%;
+
+        height: 100vh;
+        background: rgba(11, 11, 11, 0.98);
+        backdrop-filter: blur(25px);
 
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        transition: 0.4s ease;
+        transition: right .4s ease;
+        overflow-x: hidden;
     }
 
     .nav-links.active {
         right: 0;
     }
 
-    .nav-links a {
-        font-size: 1.2rem;
+    .nav-links li {
+        margin: 18px 0;
     }
 }

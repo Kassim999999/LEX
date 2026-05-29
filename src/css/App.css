@@ -26,6 +26,13 @@ h4 {
 
 section {
     padding: 100px 8%;
+    width: 100%;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
 }
 
 .container {
@@ -34,6 +41,47 @@ section {
 }
 
 button {
-    border: none;
     cursor: pointer;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+button:hover {
+    transform: translateY(-4px);
+}
+
+.primary-btn:hover,
+.book-btn:hover {
+    box-shadow:
+        0 12px 30px rgba(193, 18, 31, .35);
+}
+
+
+@media(max-width:768px) {
+
+    section {
+        padding: 80px 24px;
+    }
+
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem !important;
+        line-height: 1.2;
+    }
+
+    .section-header p {
+        font-size: 15px;
+    }
+
+          .service-card,
+          .pricing-card,
+          .testimonial-card,
+          .contact-card,
+          .feature-box {
+              border-radius: 24px;
+          }
 }
