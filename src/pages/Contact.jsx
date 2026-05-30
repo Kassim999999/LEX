@@ -1,123 +1,175 @@
 import "../css/Contact.css";
+
 import {
   FaPhoneAlt,
+  FaWhatsapp,
   FaMapMarkerAlt,
-  FaClock,
-  FaWhatsapp
+  FaClock
 } from "react-icons/fa";
 
 function Contact() {
+
+  const whatsappLink =
+    "https://wa.me/254748444111?text=Hello%20LEX%20Carwash,%20I'd%20like%20to%20book%20a%20cleaning%20service.";
+
   return (
-    <section className="contact" id="contact">
+    <div className="contact-page">
 
-      <div
-        className="section-header"
-        data-aos="fade-up"
-      >
-        <span>CONTACT US</span>
+      {/* HERO */}
+      <section className="contact-hero">
 
-        <h2>
-          Book Your Premium
-          Cleaning Service
-        </h2>
+        <span>CONTACT LEX</span>
+
+        <h1>
+          Let's Get Your Vehicle
+          Looking Brand New
+        </h1>
 
         <p>
-          Get in touch with us for luxury
-          carwash, carpet cleaning and
-          professional detailing services.
+          Reach out today for premium carwash,
+          detailing and cleaning services in
+          Lower Kabete.
         </p>
-      </div>
 
-      <div className="contact-container">
+      </section>
 
-        {/* LEFT SIDE */}
-        <div
-          className="contact-info"
-          data-aos="fade-right"
-        >
+      {/* INFO CARDS */}
+      <section className="contact-info">
 
-          <div className="contact-card">
-            <FaPhoneAlt />
-            <div>
-              <h4>Call Us</h4>
-              <p>+254 712 345 678</p>
-            </div>
-          </div>
+        <div className="info-card">
+          <FaPhoneAlt />
 
-          <div className="contact-card">
-            <FaWhatsapp />
-            <div>
-              <h4>WhatsApp</h4>
-              <p>+254 712 345 678</p>
-            </div>
-          </div>
+          <h3>Call Us</h3>
 
-          <div className="contact-card">
-            <FaMapMarkerAlt />
-            <div>
-              <h4>Visit Us</h4>
-              <p>Nairobi, Kenya</p>
-            </div>
-          </div>
+          <p>0748 444 111</p>
+        </div>
 
-          <div className="contact-card">
-            <FaClock />
-            <div>
-              <h4>Working Hours</h4>
-              <p>Mon - Sun: 8AM - 8PM</p>
-            </div>
-          </div>
+        <div className="info-card">
+          <FaWhatsapp />
+
+          <h3>WhatsApp</h3>
+
+          <p>0748 444 111</p>
+        </div>
+
+        <div className="info-card">
+          <FaMapMarkerAlt />
+
+          <h3>Location</h3>
+
+          <p>Lower Kabete</p>
+        </div>
+
+        <div className="info-card">
+          <FaClock />
+
+          <h3>Working Hours</h3>
+
+          <p>5:00 AM - 10:00 PM</p>
+        </div>
+
+      </section>
+
+      {/* CONTACT SECTION */}
+      <section className="contact-section">
+
+        <div className="contact-form-container">
+
+          <span>BOOK A SERVICE</span>
+
+          <h2>
+            Request A Booking
+          </h2>
+
+          <form className="contact-form">
+
+            <input
+              type="text"
+              placeholder="Full Name"
+            />
+
+            <input
+              type="tel"
+              placeholder="Phone Number"
+            />
+
+            <select>
+              <option>
+                Select Service
+              </option>
+
+              <option>
+                Car Wash
+              </option>
+
+              <option>
+                Interior Cleaning
+              </option>
+
+              <option>
+                Carpet Cleaning
+              </option>
+
+              <option>
+                Sofa Cleaning
+              </option>
+
+              <option>
+                Detailing
+              </option>
+            </select>
+
+            <textarea
+              rows="6"
+              placeholder="Tell us more about your request..."
+            ></textarea>
+
+            <button type="submit">
+              Send Request
+            </button>
+
+          </form>
 
         </div>
 
-        {/* RIGHT SIDE */}
-        <form
-          className="contact-form"
-          data-aos="fade-left"
+        <div className="contact-map">
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.88579479177!2d36.7274988!3d-1.2387963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f18ee05bc844f%3A0x73aad45227484f0b!2sLex%20World%20Car%20Wash!5e0!3m2!1sen!2ske!4v1780167712768!5m2!1sen!2ske"
+            allowFullScreen=""
+            loading="lazy"
+            title="LEX Location"
+          ></iframe>
+
+        </div>
+
+      </section>
+
+      {/* CTA */}
+      <section className="contact-cta">
+
+        <h2>
+          Need A Fast Booking?
+        </h2>
+
+        <p>
+          Chat with us directly on WhatsApp
+          and get an instant response.
+        </p>
+
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noreferrer"
+          className="whatsapp-btn"
         >
+          <FaWhatsapp />
+          Book On WhatsApp
+        </a>
 
-          <input
-            type="text"
-            placeholder="Full Name"
-          />
+      </section>
 
-          <input
-            type="tel"
-            placeholder="Phone Number"
-          />
-
-          <select>
-            <option>
-              Select Service
-            </option>
-            <option>
-              Premium Car Wash
-            </option>
-            <option>
-              Sofa Cleaning
-            </option>
-            <option>
-              Carpet Cleaning
-            </option>
-            <option>
-              Detailing
-            </option>
-          </select>
-
-          <textarea
-            rows="5"
-            placeholder="Tell us what you need..."
-          ></textarea>
-
-          <button type="submit">
-            Book Service
-          </button>
-
-        </form>
-
-      </div>
-
-    </section>
+    </div>
   );
 }
 
