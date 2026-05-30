@@ -1,166 +1,94 @@
 import "../css/Navbar.css";
 import { useState, useEffect } from "react";
-import {
-  FaPhoneAlt,
-  FaBars,
-  FaTimes
-} from "react-icons/fa";
+import { FaPhoneAlt, FaBars, FaTimes } from "react-icons/fa";
+import { NavLink, useLocation } from "react-router-dom";
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] =
-    useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const [scrolled, setScrolled] =
-    useState(false);
-
-  const [activeSection, setActiveSection] =
-    useState("hero");
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 80);
-
-      const sections = [
-        "hero",
-        "services",
-        "testimonials"
-      ];
-
-      sections.forEach((sectionId) => {
-        const section =
-          document.getElementById(sectionId);
-
-        if (section) {
-          const top =
-            section.offsetTop - 120;
-
-          const height =
-            section.offsetHeight;
-
-          if (
-            window.scrollY >= top &&
-            window.scrollY <
-            top + height
-          ) {
-            setActiveSection(
-              sectionId
-            );
-          }
-        }
-      });
     };
 
-    window.addEventListener(
-      "scroll",
-      handleScroll
-    );
-
-    return () =>
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const closeMenu = () =>
-    setMenuOpen(false);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav
-      className={`navbar ${
-        scrolled ? "scrolled" : ""
-      }`}
-    >
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       {/* LOGO */}
       <div className="logo">
         <h2>LEX</h2>
-        <span>
-          CARWASH & CLEANERS
-        </span>
+        <span>CARWASH & CLEANERS</span>
       </div>
 
       {/* LINKS */}
-      <ul
-        className={`nav-links ${
-          menuOpen ? "active" : ""
-        }`}
-      >
+      <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
         <li>
-          <a
-            href="#hero"
-            className={
-              activeSection ===
-              "hero"
-                ? "active"
-                : ""
-            }
+          <NavLink
+            to="/"
             onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : "")}
           >
             Home
-          </a>
+          </NavLink>
         </li>
 
         <li>
-          <a
-            href="#services"
-            className={
-              activeSection ===
-              "services"
-                ? "active"
-                : ""
-            }
+          <NavLink
+            to="/services"
             onClick={closeMenu}
           >
             Services
-          </a>
+          </NavLink>
         </li>
 
         <li>
-          <a
-            href="/pricing"
+          <NavLink
+            to="/pricing"
             onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : "")}
           >
             Pricing
-          </a>
+          </NavLink>
         </li>
 
         <li>
-          <a
-            href="/gallery"
+          <NavLink
+            to="/gallery"
             onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : "")}
           >
             Gallery
-          </a>
+          </NavLink>
         </li>
 
         <li>
-          <a
-            href="/contact"
+          <NavLink
+            to="/contact"
             onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active" : "")}
           >
             Contact
-          </a>
+          </NavLink>
         </li>
       </ul>
 
       {/* BUTTON */}
-      <button className="book-btn">
+      <NavLink to="/contact" className="book-btn" onClick={closeMenu}>
         <FaPhoneAlt />
         Book Wash
-      </button>
+      </NavLink>
 
       {/* MOBILE MENU */}
-      <div
-        className="menu-toggle"
-        onClick={() =>
-          setMenuOpen(!menuOpen)
-        }
-      >
-        {menuOpen ? (
-          <FaTimes />
-        ) : (
-          <FaBars />
-        )}
+      <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
     </nav>
   );

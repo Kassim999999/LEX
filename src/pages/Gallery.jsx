@@ -1,66 +1,174 @@
 import "../css/Gallery.css";
 
-import img1 from "../assets/images/gallery1.jpg";
-import img2 from "../assets/images/gallery2.jpg";
-import img3 from "../assets/images/gallery3.jpg";
-import img4 from "../assets/images/gallery4.jpg";
-import img5 from "../assets/images/gallery5.jpg";
-import img6 from "../assets/images/gallery6.jpg";
+import gallery1 from "../assets/images/gallery1.jpg";
+import gallery2 from "../assets/images/gallery2.jpg";
+import gallery3 from "../assets/images/gallery3.jpg";
+import gallery4 from "../assets/images/gallery4.jpg";
+import gallery5 from "../assets/images/gallery5.jpg";
+import gallery6 from "../assets/images/gallery6.jpg";
+import gallery7 from "../assets/images/gallery7.jpg";
+import gallery8 from "../assets/images/gallery8.jpg";
 
 function Gallery() {
   const galleryImages = [
-    img1,
-    img2,
-    img3,
-    img4,
-    img5,
-    img6
+    {
+      image: gallery1,
+      category: "Carwash",
+      title: "Luxury Exterior Wash"
+    },
+    {
+      image: gallery2,
+      category: "Detailing",
+      title: "Premium Detailing"
+    },
+    {
+      image: gallery3,
+      category: "Cleaning",
+      title: "Sofa Cleaning"
+    },
+    {
+      image: gallery4,
+      category: "Carwash",
+      title: "Interior Vacuum"
+    },
+    {
+      image: gallery5,
+      category: "Cleaning",
+      title: "Deep Carpet Cleaning"
+    },
+    {
+      image: gallery6,
+      category: "Detailing",
+      title: "Luxury Finish"
+    },
+    {
+      image: gallery7,
+      category: "Carwash",
+      title: "Premium Foam Wash"
+    },
+    {
+      image: gallery8,
+      category: "Cleaning",
+      title: "Spotless Results"
+    }
   ];
 
   return (
-    <section className="gallery" id="gallery">
+    <div className="gallery-page">
 
-      <div
-        className="section-header"
-        data-aos="fade-up"
-      >
-        <span>OUR WORK</span>
+      {/* HERO */}
+      <section className="gallery-hero">
 
-        <h2>
-          Luxury Finish,
-          Spotless Results
-        </h2>
+        <div
+          className="gallery-hero-content"
+          data-aos="fade-up"
+        >
+          <span>OUR GALLERY</span>
 
-        <p>
-          See the premium care and attention
-          we bring to every vehicle and
-          cleaning service.
-        </p>
-      </div>
+          <h1>
+            Premium Cleaning
+            Results That Speak
+          </h1>
 
-      <div className="gallery-grid">
+          <p>
+            Explore our premium carwash,
+            detailing and cleaning work
+            crafted for spotless results.
+          </p>
+        </div>
 
-        {galleryImages.map((image, index) => (
-          <div
-            className="gallery-card"
-            key={index}
-            data-aos="zoom-in"
-            data-aos-delay={index * 100}
-          >
-            <img
-              src={image}
-              alt="LEX Gallery"
-            />
+      </section>
 
-            <div className="gallery-overlay">
-              <h3>LEX Premium Care</h3>
-            </div>
-          </div>
-        ))}
+      {/* FILTERS */}
+      <section className="gallery-filter-section">
 
-      </div>
+        <div className="gallery-filters">
+          <button className="active">
+            All
+          </button>
 
-    </section>
+          <button>
+            Carwash
+          </button>
+
+          <button>
+            Detailing
+          </button>
+
+          <button>
+            Cleaning
+          </button>
+        </div>
+
+      </section>
+
+      {/* GALLERY GRID */}
+      <section className="gallery-grid-section">
+
+        <div className="masonry-grid">
+
+          {galleryImages.map(
+            (item, index) => (
+              <div
+                className="gallery-card"
+                key={index}
+                data-aos="zoom-in"
+                data-aos-delay={
+                  index * 100
+                }
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                />
+
+                <div className="gallery-overlay">
+                  <span>
+                    {item.category}
+                  </span>
+
+                  <h3>
+                    {item.title}
+                  </h3>
+                </div>
+              </div>
+            )
+          )}
+
+        </div>
+
+      </section>
+
+      {/* CTA */}
+      <section className="gallery-cta">
+
+        <div
+          className="gallery-cta-content"
+          data-aos="fade-up"
+        >
+          <span>
+            PREMIUM EXPERIENCE
+          </span>
+
+          <h2>
+            Ready For A
+            Spotless Finish?
+          </h2>
+
+          <p>
+            Let LEX bring luxury
+            cleaning and detailing
+            to your doorstep.
+          </p>
+
+          <button>
+            Book Appointment
+          </button>
+        </div>
+
+      </section>
+
+    </div>
   );
 }
 
