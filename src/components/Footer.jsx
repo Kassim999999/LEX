@@ -18,6 +18,10 @@ function Footer() {
 
           <h2>LEX</h2>
 
+          <span className="brand-tag">
+  CARWASH & CLEANERS
+</span>
+
           <p>
             Premium carwash, detailing and
             cleaning services designed to
@@ -66,7 +70,7 @@ function Footer() {
 
           <div>
             <FaPhoneAlt />
-            <span>+254 700 000 000</span>
+            <span>+254 748 444 111</span>
           </div>
 
           <div>
@@ -76,7 +80,7 @@ function Footer() {
 
           <div>
             <FaMapMarkerAlt />
-            <span>Nairobi, Kenya</span>
+            <span>Lower Kabete</span>
           </div>
         </div>
 
@@ -84,8 +88,8 @@ function Footer() {
 
       <div className="footer-bottom">
         <p>
-          © 2026 LEX Carwash & Cleaners.
-          All rights reserved.
+         © 2026 LEX World Car Wash.
+Premium Cleaning. Exceptional Results.
         </p>
       </div>
 

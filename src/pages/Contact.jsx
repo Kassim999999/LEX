@@ -9,9 +9,6 @@ import {
 
 function Contact() {
 
-  const whatsappLink =
-    "https://wa.me/254748444111?text=Hello%20LEX%20Carwash,%20I'd%20like%20to%20book%20a%20cleaning%20service.";
-
   return (
     <div className="contact-page">
 
@@ -156,16 +153,6 @@ function Contact() {
           Chat with us directly on WhatsApp
           and get an instant response.
         </p>
-
-        <a
-          href={whatsappLink}
-          target="_blank"
-          rel="noreferrer"
-          className="whatsapp-btn"
-        >
-          <FaWhatsapp />
-          Book On WhatsApp
-        </a>
 
       </section>
 

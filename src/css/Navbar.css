@@ -32,6 +32,7 @@
 /* LOGO */
 .logo {
     cursor: pointer;
+    text-decoration: none;
 }
 
 .logo h2 {

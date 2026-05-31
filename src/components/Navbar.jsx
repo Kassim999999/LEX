@@ -21,12 +21,22 @@ function Navbar() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <nav
+  className={`navbar ${
+    scrolled || location.pathname !== "/"
+      ? "scrolled"
+      : ""
+  }`}
+>
       {/* LOGO */}
-      <div className="logo">
+      <NavLink
+  to="/"
+  className="logo"
+  onClick={closeMenu}
+>
         <h2>LEX</h2>
         <span>CARWASH & CLEANERS</span>
-      </div>
+      </NavLink>
 
       {/* LINKS */}
       <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
