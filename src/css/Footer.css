@@ -1,3 +1,11 @@
+/* =========================
+   COLOR SYSTEM (ADDED ONLY)
+========================= */
+:root {
+    --primary-red: #C1121F;
+    --deep-blue: #0A3D62;
+}
+
 .footer {
     background: #0A0A0A;
     color: white;
@@ -6,7 +14,7 @@
     overflow: hidden;
 }
 
-/* RED GLOW */
+/* 🔴🔵 MIXED GLOW (upgraded from red-only) */
 .footer::before {
     content: "";
     position: absolute;
@@ -18,8 +26,23 @@
     right: -120px;
 
     background:
-        radial-gradient(rgba(193, 18, 31, .12),
-            transparent 70%);
+        radial-gradient(rgba(193, 18, 31, .12), transparent 70%),
+        radial-gradient(rgba(10, 61, 98, .10), transparent 75%);
+}
+
+/* 🔵 secondary ambient glow (very subtle, adds depth) */
+.footer::after {
+    content: "";
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    bottom: -120px;
+    left: -120px;
+
+    background:
+        radial-gradient(rgba(10, 61, 98, .08), transparent 70%);
 }
 
 .footer-container {
@@ -73,7 +96,7 @@
     height: 50px;
 
     border-radius: 50%;
-background: rgba(255, 255, 255, .06);
+    background: rgba(255, 255, 255, .06);
     backdrop-filter: blur(15px);
 
     border:
@@ -88,10 +111,12 @@ background: rgba(255, 255, 255, .06);
 }
 
 .footer-socials a:hover {
-    background: #C1121F;
+    /* 🔵 blended hover instead of flat red */
+    background: linear-gradient(135deg, #C1121F, #0A3D62);
 
     box-shadow:
-        0 10px 30px rgba(193, 18, 31, .35);
+        0 10px 30px rgba(193, 18, 31, .25),
+        0 6px 20px rgba(10, 61, 98, .25);
 
     transform:
         translateY(-5px);
@@ -117,6 +142,11 @@ background: rgba(255, 255, 255, .06);
 .footer-links a:hover {
     color: #C1121F;
     transform: translateX(4px);
+}
+
+/* 🔵 micro accent on hover (barely visible but premium) */
+.footer-links a:hover {
+    text-shadow: 0 0 8px rgba(10, 61, 98, 0.25);
 }
 
 .footer-contact div {
@@ -146,6 +176,14 @@ background: rgba(255, 255, 255, .06);
 
 .footer-bottom p {
     color: rgba(255, 255, 255, .5);
+}
+
+/* 🔵 subtle divider enhancement */
+.footer-bottom {
+    border-top:
+        1px solid rgba(255, 255, 255, .08);
+    box-shadow:
+        0 -1px 0 rgba(10, 61, 98, 0.08);
 }
 
 /* MOBILE */

@@ -15,6 +15,7 @@ body {
     background: #0f0f0f;
     color: white;
     overflow-x: hidden;
+    animation: pageReveal .8s ease;
 }
 
 h1,
@@ -55,6 +56,36 @@ button:hover {
 .book-btn:hover {
     box-shadow:
         0 12px 30px rgba(193, 18, 31, .35);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0D0D0D;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #C1121F;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e01a2a;
+}
+
+@keyframes pageReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 

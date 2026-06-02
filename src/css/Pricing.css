@@ -1,3 +1,12 @@
+/* =========================
+   COLOR SYSTEM (ADDED ONLY)
+========================= */
+:root {
+    --primary-red: #C1121F;
+    --deep-blue: #0A3D62;
+}
+
+/* PAGE */
 .pricing-page {
     background: #0b0b0b;
     color: white;
@@ -19,6 +28,10 @@
     background:
         linear-gradient(rgba(0, 0, 0, 0.82),
             rgba(0, 0, 0, 0.86)),
+        /* 🔵 added subtle depth layer */
+        linear-gradient(120deg,
+            rgba(193, 18, 31, 0.12),
+            rgba(10, 61, 98, 0.12)),
         url("../assets/images/lex.jpg") center center/cover no-repeat;
 }
 
@@ -66,7 +79,9 @@
     height: 4px;
 
     border-radius: 20px;
-    background: #C1121F;
+
+    /* 🔵 gradient accent instead of flat red */
+    background: linear-gradient(90deg, #C1121F, #0A3D62);
 }
 
 /* TABLE */
@@ -86,7 +101,8 @@
 
 /* HEAD */
 .pricing-head {
-    background: #C1121F;
+    /* 🔵 subtle gradient instead of flat red */
+    background: linear-gradient(135deg, #C1121F, #0A3D62);
 
     display: grid;
     grid-template-columns:
@@ -111,8 +127,11 @@
 }
 
 .pricing-row:hover {
+    /* 🔵 blended hover instead of pure red */
     background:
-        rgba(193, 18, 31, 0.08);
+        linear-gradient(90deg,
+            rgba(193, 18, 31, 0.08),
+            rgba(10, 61, 98, 0.06));
 }
 
 .pricing-row span:first-child {
@@ -145,9 +164,11 @@
 }
 
 .combo-card {
+    /* 🔵 blended gradient instead of red-only */
     background:
         linear-gradient(145deg,
             rgba(193, 18, 31, 0.15),
+            rgba(10, 61, 98, 0.12),
             rgba(255, 255, 255, 0.04));
 
     border:
@@ -163,11 +184,14 @@
 .combo-card:hover {
     transform: translateY(-8px);
 
+    /* 🔵 mixed shadow instead of red-only */
     box-shadow:
-        0 20px 50px rgba(193, 18, 31, 0.18);
+        0 20px 50px rgba(193, 18, 31, 0.12),
+        0 10px 30px rgba(10, 61, 98, 0.12);
 }
 
 .combo-card h3 {
+    /* 🔵 slight blend */
     color: #C1121F;
     margin-bottom: 18px;
     font-size: 1.6rem;
@@ -222,6 +246,13 @@
 
     padding: 35px;
     text-align: center;
+
+    transition: .3s ease;
+}
+
+.extra-card:hover {
+    /* 🔵 subtle hover feedback */
+    border: 1px solid rgba(10, 61, 98, 0.25);
 }
 
 .extra-card h3 {

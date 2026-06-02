@@ -1,4 +1,5 @@
 import "../css/Gallery.css";
+import { useState } from "react";
 
 import gallery1 from "../assets/images/gallery1.jpg";
 import gallery2 from "../assets/images/gallery2.jpg";
@@ -10,6 +11,21 @@ import gallery7 from "../assets/images/gallery7.jpg";
 import gallery8 from "../assets/images/gallery8.jpg";
 
 function Gallery() {
+ const [selectedIndex, setSelectedIndex] = useState(null);
+
+ const nextImage = () => {
+  setSelectedIndex(
+    (selectedIndex + 1) % galleryImages.length
+  );
+};
+
+const prevImage = () => {
+  setSelectedIndex(
+    (selectedIndex - 1 + galleryImages.length) %
+      galleryImages.length
+  );
+};
+
   const galleryImages = [
     {
       image: gallery1,
@@ -117,10 +133,12 @@ function Gallery() {
                   index * 100
                 }
               >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                />
+<img
+  src={item.image}
+  alt={item.title}
+  onClick={() => setSelectedIndex(index)}
+/>
+
 
                 <div className="gallery-overlay">
                   <span>
@@ -167,6 +185,52 @@ function Gallery() {
         </div>
 
       </section>
+
+
+      {/* LIGHTBOX */}
+{selectedIndex !== null && (
+  <div
+    className="lightbox"
+    onClick={() => setSelectedIndex(null)}
+  >
+    <span
+      className="close-lightbox"
+      onClick={() => setSelectedIndex(null)}
+    >
+      ×
+    </span>
+
+    <button
+      className="lightbox-arrow left"
+      onClick={(e) => {
+        e.stopPropagation();
+        prevImage();
+      }}
+    >
+      ❮
+    </button>
+
+    <img
+      src={galleryImages[selectedIndex].image}
+      alt="Preview"
+      onClick={(e) => e.stopPropagation()}
+    />
+
+    <button
+      className="lightbox-arrow right"
+      onClick={(e) => {
+        e.stopPropagation();
+        nextImage();
+      }}
+    >
+      ❯
+    </button>
+
+    <div className="image-counter">
+      {selectedIndex + 1} / {galleryImages.length}
+    </div>
+  </div>
+)}
 
     </div>
   );
