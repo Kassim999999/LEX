@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { FaPhoneAlt, FaBars, FaTimes } from "react-icons/fa";
 import { NavLink, useLocation } from "react-router-dom";
 
+import logo from "../assets/lex-logo.png";
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -29,14 +31,9 @@ function Navbar() {
   }`}
 >
       {/* LOGO */}
-      <NavLink
-  to="/"
-  className="logo"
-  onClick={closeMenu}
->
-        <h2>LEX</h2>
-        <span>CARWASH & CLEANERS</span>
-      </NavLink>
+<NavLink to="/" className="logo" onClick={closeMenu}>
+  <img src={logo} alt="LEX Car Carpet Logo" className="logo-img" />
+</NavLink>
 
       {/* LINKS */}
       <ul className={`nav-links ${menuOpen ? "active" : ""}`}>

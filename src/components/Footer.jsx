@@ -7,6 +7,8 @@ import {
   FaMapMarkerAlt
 } from "react-icons/fa";
 
+import logo from "../assets/lex-logo.png";
+
 function Footer() {
   return (
     <footer className="footer">
@@ -16,12 +18,7 @@ function Footer() {
         {/* BRAND */}
         <div className="footer-brand">
 
-          <h2>LEX</h2>
-
-          <span className="brand-tag">
-  CARWASH & CLEANERS
-</span>
-
+<img src={logo} alt="LEX Logo" className="footer-logo" />
           <p>
             Premium carwash, detailing and
             cleaning services designed to

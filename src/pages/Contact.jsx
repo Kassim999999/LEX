@@ -1,4 +1,5 @@
 import "../css/Contact.css";
+import { useState } from "react";
 
 import {
   FaPhoneAlt,
@@ -8,6 +9,42 @@ import {
 } from "react-icons/fa";
 
 function Contact() {
+
+  const [formData, setFormData] = useState({
+  name: "",
+  phone: "",
+  service: "",
+  message: ""
+});
+
+  const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value
+  });
+};
+
+  const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const text = `
+Hello LEX Carwash
+
+Name: ${formData.name}
+
+Phone: ${formData.phone}
+
+Service: ${formData.service}
+
+Message:
+${formData.message}
+`;
+
+  const whatsappUrl =
+    `https://wa.me/254748444111?text=${encodeURIComponent(text)}`;
+
+  window.open(whatsappUrl, "_blank");
+};
 
   return (
     <div className="contact-page">
@@ -78,19 +115,35 @@ function Contact() {
             Request A Booking
           </h2>
 
-          <form className="contact-form">
+          <form
+  className="contact-form"
+  onSubmit={handleSubmit}
+>
 
-            <input
-              type="text"
-              placeholder="Full Name"
-            />
+<input
+  type="text"
+  name="name"
+  placeholder="Full Name"
+  value={formData.name}
+  onChange={handleChange}
+  required
+/>
 
-            <input
-              type="tel"
-              placeholder="Phone Number"
-            />
+ <input
+  type="tel"
+  name="phone"
+  placeholder="Phone Number"
+  value={formData.phone}
+  onChange={handleChange}
+  required
+/>
 
-            <select>
+           <select
+  name="service"
+  value={formData.service}
+  onChange={handleChange}
+  required
+>
               <option>
                 Select Service
               </option>
@@ -116,13 +169,16 @@ function Contact() {
               </option>
             </select>
 
-            <textarea
-              rows="6"
-              placeholder="Tell us more about your request..."
-            ></textarea>
+<textarea
+  rows="6"
+  name="message"
+  placeholder="Tell us more about your request..."
+  value={formData.message}
+  onChange={handleChange}
+></textarea>
 
             <button type="submit">
-              Send Request
+              Send To WhatsApp
             </button>
 
           </form>
