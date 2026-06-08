@@ -160,11 +160,11 @@
 @media(max-width:900px) {
 
     .navbar {
-        padding: 20px 24px;
+        padding: 25px 3% 25px 0.99%;
     }
 
     .logo-img {
-        height: 45px;
+        height: 85px;
     }
 
     .book-btn {
