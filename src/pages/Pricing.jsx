@@ -167,10 +167,10 @@ function Pricing() {
       <section className="pricing-hero">
         <span>LEX PRICE LIST</span>
 
-        <h1>
+        {/* <h1>
           Premium Carwash &
           Cleaning Pricing
-        </h1>
+        </h1> */}
 
         <p>
           Luxury cleaning services with

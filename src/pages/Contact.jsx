@@ -138,36 +138,20 @@ ${formData.message}
   required
 />
 
-           <select
+<select
+  className="service-select"
   name="service"
   value={formData.service}
   onChange={handleChange}
   required
 >
-              <option>
-                Select Service
-              </option>
-
-              <option>
-                Car Wash
-              </option>
-
-              <option>
-                Interior Cleaning
-              </option>
-
-              <option>
-                Carpet Cleaning
-              </option>
-
-              <option>
-                Sofa Cleaning
-              </option>
-
-              <option>
-                Detailing
-              </option>
-            </select>
+  <option value="">Select Service</option>
+  <option value="Car Wash">Car Wash</option>
+  <option value="Interior Cleaning">Interior Cleaning</option>
+  <option value="Carpet Cleaning">Carpet Cleaning</option>
+  <option value="Sofa Cleaning">Sofa Cleaning</option>
+  <option value="Detailing">Detailing</option>
+</select>
 
 <textarea
   rows="6"

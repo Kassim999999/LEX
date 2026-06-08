@@ -15,7 +15,7 @@ body {
     background: #0f0f0f;
     color: white;
     overflow-x: hidden;
-    animation: pageReveal .8s ease;
+    /* animation: pageReveal .8s ease; */
 }
 
 h1,

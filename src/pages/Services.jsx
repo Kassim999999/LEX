@@ -1,52 +1,61 @@
 import "../css/Services.css";
-import {
-  FaCarSide,
-  FaCouch,
-  FaPumpSoap,
-  FaBroom,
-  FaSprayCanSparkles,
-  FaShower
-} from "react-icons/fa6";
+
+import gallery1 from "../assets/images/gallery1.jpg";
+import gallery2 from "../assets/images/gallery9.jpg";
+import gallery3 from "../assets/images/gallery10.jpg";
+import gallery4 from "../assets/images/gallery11.jpg";
+import gallery5 from "../assets/images/gallery6.jpg";
+import gallery6 from "../assets/images/gallery6.jpg";
 
 function Services() {
   const services = [
     {
-      icon: <FaCarSide />,
+      image: gallery1,
+      category: "CARWASH",
       title: "Premium Car Wash",
-      text: "Luxury exterior and interior carwash with premium detailing."
+      text: "Luxury exterior and interior carwash with premium cleaning products and spotless finishing."
     },
     {
-      icon: <FaCouch />,
+      image: gallery2,
+      category: "SOFA CLEANING",
       title: "Sofa Cleaning",
-      text: "Deep cleaning that restores freshness and removes stains."
+      text: "Deep cleaning that removes stains, dust and odors while restoring freshness."
     },
     {
-      icon: <FaPumpSoap />,
+      image: gallery3,
+      category: "CARPET CLEANING",
       title: "Carpet Cleaning",
-      text: "Professional carpet washing for homes and offices."
+      text: "Professional carpet washing and stain removal for homes and businesses."
     },
     {
-      icon: <FaSprayCanSparkles />,
+      image: gallery4,
+      category: "DETAILING",
       title: "Detailing & Polishing",
-      text: "Bring back shine with premium polishing and finishing."
+      text: "Restore shine and protection with premium detailing and polishing services."
     },
     {
-      icon: <FaBroom />,
+      image: gallery5,
+      category: "INTERIOR CARE",
       title: "Interior Cleaning",
-      text: "Detailed cleaning for homes, offices and interiors."
+      text: "Complete cleaning solutions for vehicle interiors."
     },
     {
-      icon: <FaShower />,
+      image: gallery6,
+      category: "STEAM CLEANING",
       title: "Steam Cleaning",
-      text: "Modern deep-clean technology for spotless results."
+      text: "Advanced steam cleaning technology for deeper sanitization and spotless results."
     }
   ];
 
   return (
-    <section className="services" id="services">
+    <section className="services">
 
-      <div className="section-header" data-aos="fade-up">
+      <div
+        className="section-header"
+        data-aos="fade-up"
+      >
         <span>OUR SERVICES</span>
+
         <h2>
           Premium Cleaning
           Solutions
@@ -67,16 +76,39 @@ function Services() {
             data-aos="fade-up"
             data-aos-delay={index * 100}
           >
-            <div className="service-icon">
-              {service.icon}
+            <div className="service-image-wrapper">
+
+              <img
+                src={service.image}
+                alt={service.title}
+                className="service-image"
+              />
+
+              <div className="service-overlay">
+                <span>
+                  {service.category}
+                </span>
+              </div>
+
             </div>
 
-            <h3>{service.title}</h3>
-            <p>{service.text}</p>
+            <div className="service-content">
+
+              <h3>
+                {service.title}
+              </h3>
+
+              <p>
+                {service.text}
+              </p>
+
+            </div>
+
           </div>
         ))}
 
       </div>
+
     </section>
   );
 }

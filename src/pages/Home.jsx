@@ -1,5 +1,6 @@
 import "../css/Home.css";
 import whyImage from "../assets/images/why-lex.jpg";
+import { useNavigate } from "react-router-dom";
 
 import {
   FaCarSide,
@@ -18,9 +19,29 @@ import {
   FaShower
 } from "react-icons/fa6";
 
+import {
+  FaPhoneAlt,
+  FaClipboardCheck,
+  FaSoap,
+  FaCheckCircle
+} from "react-icons/fa";
+
 function Home() {
 
-  const services = [
+      const navigate = useNavigate();
+
+  const handleBooking = () => {
+    if (window.innerWidth <= 768) {
+      window.open(
+        "https://wa.me/254748444111",
+        "_blank"
+      );
+    } else {
+      navigate("/contact");
+    }
+  };
+
+  const serve = [
     {
       icon: <FaCarSide />,
       title: "Premium Car Wash",
@@ -45,38 +66,40 @@ function Home() {
       text:
         "Bring back shine with premium polishing and finishing."
     },
-    {
-      icon: <FaBroom />,
-      title: "Interior Cleaning",
-      text:
-        "Detailed cleaning for homes, offices and interiors."
-    },
-    {
-      icon: <FaShower />,
-      title: "Steam Cleaning",
-      text:
-        "Modern deep-clean technology for spotless results."
-    }
+    // {
+    //   icon: <FaBroom />,
+    //   title: "Interior Cleaning",
+    //   text:
+    //     "Detailed cleaning for homes, offices and interiors."
+    // },
+    // {
+    //   icon: <FaShower />,
+    //   title: "Steam Cleaning",
+    //   text:
+    //     "Modern deep-clean technology for spotless results."
+    // }
   ];
 
-  const reviews = [
+  const steps = [
     {
-      name: "Brian M.",
-      role: "SUV Owner",
-      text:
-        "LEX transformed my car completely. The detailing was spotless and the service felt premium."
+      icon: <FaPhoneAlt />,
+      title: "Book A Service",
+      text: "Call, WhatsApp or visit us to schedule your cleaning service."
     },
     {
-      name: "Sarah W.",
-      role: "Homeowner",
-      text:
-        "Their sofa and carpet cleaning exceeded expectations. Everything looked brand new."
+      icon: <FaClipboardCheck />,
+      title: "Inspection",
+      text: "We assess to ensure the perfect clean."
     },
     {
-      name: "Kevin O.",
-      role: "Business Owner",
-      text:
-        "Fast, professional and reliable. Definitely my go-to cleaning and carwash service."
+      icon: <FaSoap />,
+      title: "Professional Cleaning",
+      text: "Our team uses premium products and equipment for spotless results."
+    },
+    {
+      icon: <FaCheckCircle />,
+      title: "Ready To Enjoy",
+      text: "Enjoy a deep, professional clean for your car, sofa, or carpets."
     }
   ];
 
@@ -99,26 +122,29 @@ function Home() {
             </span>
 
             <h1>
-              Luxury Care For
-              Your Car &
-              Interior Cleaning
+              Where Clean 
+              Meets Class
             </h1>
 
             <p>
-              Premium carwash, carpet cleaning,
-              sofa cleaning and detailing
-              services designed to leave
-              everything spotless.
+Premium carwash, carpet cleaning, sofa cleaning and detailing services with spotless results.
             </p>
 
-            <div className="hero-buttons">
-              <button className="primary-btn">
-                Book Appointment
-              </button>
+    <div className="hero-buttons">
+      <button
+        className="primary-btn"
+        onClick={handleBooking}
+      >
+        Book Service
+      </button>
+    
 
-              <button className="secondary-btn">
-                View Pricing
-              </button>
+<button
+  className="secondary-btn"
+  onClick={() => navigate("/pricing")}
+>
+  View Pricing
+</button>
             </div>
           </div>
 
@@ -130,18 +156,18 @@ function Home() {
             <div className="floating-card">
               <FaCarSide />
               <div>
-                <h3>5000+</h3>
+                <h3>500+</h3>
                 <p>Cars Cleaned</p>
               </div>
             </div>
 
-            <div className="floating-card">
-              <FaStar />
-              <div>
-                <h3>4.9/5</h3>
-                <p>Customer Rating</p>
-              </div>
-            </div>
+<div className="floating-card">
+  <FaGem />
+  <div>
+    <h3>Detail Focus</h3>
+    <p>Premium Finish</p>
+  </div>
+</div>
 
             <div className="floating-card">
               <FaShieldAlt />
@@ -157,7 +183,7 @@ function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="services" id="services">
+      <section className="serve" id="serve">
 
         <div
           className="section-header"
@@ -177,21 +203,21 @@ function Home() {
           </p>
         </div>
 
-        <div className="services-grid">
+        <div className="serve-grid">
 
-          {services.map((service, index) => (
+          {serve.map((serve, index) => (
             <div
-              className="service-card"
+              className="serve-card"
               key={index}
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="service-icon">
-                {service.icon}
+              <div className="serve-icon">
+                {serve.icon}
               </div>
 
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
+              <h3>{serve.title}</h3>
+              <p>{serve.text}</p>
             </div>
           ))}
 
@@ -279,7 +305,7 @@ function Home() {
       </section>
 
       {/* CTA */}
-      <section className="cta-section">
+      {/* <section className="cta-section">
 
         <div
           className="cta-content"
@@ -304,59 +330,54 @@ function Home() {
             Book Your Service
           </button>
         </div>
-      </section>
+      </section> */}
 
-      {/* TESTIMONIALS */}
-      <section className="testimonials">
+      {/* Process */}
+       <section className="process">
 
-        <div
-          className="section-header"
-          data-aos="fade-up"
-        >
-          <span>TESTIMONIALS</span>
+      <div
+        className="section-header"
+        data-aos="fade-up"
+      >
+        <span>OUR PROCESS</span>
 
-          <h2>
-            What Our Clients
-            Say About LEX
-          </h2>
+        <h2>
+          How LEX Works
+        </h2>
 
-          <p>
-            Trusted by hundreds of happy
-            clients for premium carwash
-            and cleaning services.
-          </p>
-        </div>
+        <p>
+          Simple, professional and designed
+          to give you the best cleaning
+          experience every time.
+        </p>
+      </div>
 
-        <div className="testimonial-grid">
+      <div className="process-grid">
 
-          {reviews.map((review, index) => (
-            <div
-              className="testimonial-card"
-              key={index}
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
-              <div className="stars">
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-              </div>
-
-              <p className="review-text">
-                "{review.text}"
-              </p>
-
-              <div className="client-info">
-                <h4>{review.name}</h4>
-                <span>{review.role}</span>
-              </div>
+        {steps.map((step, index) => (
+          <div
+            className="process-card"
+            key={index}
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            <div className="process-number">
+              0{index + 1}
             </div>
-          ))}
 
-        </div>
-      </section>
+            <div className="process-icon">
+              {step.icon}
+            </div>
+
+            <h3>{step.title}</h3>
+
+            <p>{step.text}</p>
+          </div>
+        ))}
+
+      </div>
+
+    </section>
 
       {/* FINAL BOOKING CTA */}
 <section className="booking-section">
@@ -381,13 +402,16 @@ function Home() {
 
     <div className="booking-buttons">
 
-      <button className="primary-btn">
-        Book Appointment
+      <button
+        className="primary-btn"
+        onClick={handleBooking}
+      >
+        Book Service
       </button>
 
-      <button className="secondary-btn">
-        Call Us
-      </button>
+<a href="tel:+254748444111" className="secondary-btn">
+  Call Us
+</a>
 
     </div>
   </div>

@@ -157,6 +157,64 @@
     transition: .2s ease;
 }
 
+/* SERVICE SELECT (FULL STYLE) */
+.service-select {
+    width: 100%;
+    padding: 18px 20px;
+
+    border-radius: 16px;
+    border: 1px solid transparent;
+
+    font-size: 15px;
+    outline: none;
+
+    cursor: pointer;
+
+    /* remove default styling */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* premium gradient border */
+    background:
+        linear-gradient(white, white) padding-box,
+        linear-gradient(90deg, #C1121F, #0A4D9B) border-box;
+
+    /* custom arrow */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%230A4D9B' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 18px;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER */
+.service-select:hover {
+    background:
+        linear-gradient(white, white) padding-box,
+        linear-gradient(90deg, #C1121F, #0A4D9B) border-box;
+
+    box-shadow:
+        0 6px 20px rgba(10, 77, 155, 0.08);
+}
+
+/* FOCUS (important for premium feel) */
+.service-select:focus {
+    background:
+        linear-gradient(white, white) padding-box,
+        linear-gradient(90deg, #C1121F, #0A4D9B) border-box;
+
+    box-shadow:
+        0 0 0 3px rgba(10, 77, 155, 0.15);
+}
+
+/* OPTIONAL: text color */
+.service-select option {
+    color: #111;
+}
+
 /* 🔵 premium focus state */
 .contact-form input:focus,
 .contact-form select:focus,

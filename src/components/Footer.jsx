@@ -31,7 +31,7 @@ function Footer() {
               <FaFacebookF />
             </a>
             
-            <a href="#">
+            <a href="https://www.instagram.com/lex_car_carpet_sofacleaners?igsh=MW9zcHpmcGhocmZnbA==">
               <FaInstagram />
             </a>
 
@@ -53,7 +53,7 @@ function Footer() {
 
         {/* COMPANY */}
         <div className="footer-links">
-          <h3>Company</h3>
+          <h3>Quick links</h3>
 
           <a href="#">About</a>
           <a href="#">Pricing</a>
@@ -72,7 +72,7 @@ function Footer() {
 
           <div>
             <FaWhatsapp />
-            <span>WhatsApp Support</span>
+            <span>+254 748 444 111</span>
           </div>
 
           <div>
