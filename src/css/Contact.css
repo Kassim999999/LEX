@@ -336,7 +336,8 @@
     .contact-info {
         padding: 70px 24px;
 
-        grid-template-columns: 1fr;
+                grid-template-columns:
+                        repeat(2, 1fr);
     }
 
     .contact-section {
